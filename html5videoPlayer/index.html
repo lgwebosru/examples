@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 player</title>
+	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+	<link rel="stylesheet" media="screen" type="text/css" href="style.css">
+	
+	<script>
+		window.onload = function(){
+			
+			var player = document.getElementById("video"),
+				play   = document.getElementById("play"),
+				pause  = document.getElementById("pause"),
+				backward = document.getElementById("backward"),
+				forward  = document.getElementById("forward"),
+				state    = document.getElementById("state"),
+				getinfo  = document.getElementById("getinfo"),
+				info = document.getElementById("info"),
+				interval;
+			
+			getInfo();
+			
+			play.onclick = function(e){
+				player.play();
+				interval = setInterval(getInfo, 1000);
+			}
+			
+			pause.onclick = function(e){
+				player.pause();
+			}
+			
+			backward.onclick = function(e){
+				player.currentTime -= 5;
+			}
+			
+			forward.onclick = function(e){
+				player.currentTime += 5;
+			}
+				
+			
+			// Events
+			player.addEventListener("play", function(e){
+				state.innerText = "Play";
+			});
+						 
+			player.addEventListener("canplay", function(e){
+				state.innerText = "Playing";
+			});
+			
+			player.addEventListener("waiting", function(e){
+				state.innerText = "Buffering";
+			});
+			
+			player.addEventListener("pause", function(e){
+				state.innerText = "Pausing";
+			});
+			
+			player.addEventListener("seeking", function(e){
+				state.innerText = "Start seeking";
+			});
+			
+			player.addEventListener("seeked", function(e){
+				state.innerText = "End seeking";
+			});
+			
+			player.addEventListener("ended", function(e){
+				state.innerText = "End of video";
+				clearInterval(interval);
+			});
+			
+			function getInfo(){
+				
+				info.innerHTML = 
+					'error: '+player.error+'<br />'+
+					'currentSrc: '+player.src+'<br />'+
+					'readyState: '+player.readyState+'<br />'+
+					'currentTime: '+player.currentTime+'<br />'+
+					'duration: '+player.duration;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div> 
+		<h1 class="caption">HTML5 player</h1> 
+		<video id="video" src="video/LG_Commercial.mp4"></video>
+		
+		<div class="controls">
+			<p>
+				<button id="play">Play</button>
+				<button id="pause">Pause</button>
+				<button id="backward"> <<< </button>
+				<button id="forward"> >>> </button>
+			</p>
+			<div id="info"></div>
+			<p id="state"></p>
+		</div>
+	</div>
+</body>
+</html>

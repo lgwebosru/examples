@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TV Device Information</title>
+	<link rel="stylesheet" media="screen" type="text/css" href="style.css">
+	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+	        webOS.service.request("luna://com.webos.service.tv.systemproperty",{
+	    	   
+	            method:"getSystemInfo",
+	            parameters:{
+	            	keys: [
+	            		"firmwareVersion",
+	            		"modelName",
+	            		"sdkVersion",
+	            		"UHD"
+	            	]	
+	            },
+	            onSuccess: function (args) {
+					
+	            	console.log(args);
+					document.getElementById("info").innerHTML =
+						"firmwareVersion: "+args.firmwareVersion+"<br />"+
+						"modelName: "+args.modelName+"<br />"+
+						"sdkVersion: "+args.sdkVersion+"<br />"+
+						"UHD: "+args.UHD;
+	            },
+	            onFailure: function (args) {
+	            	console.log(args);
+	            }
+	        });
+        }
+	</script>
+</head>
+<body>
+	<h1 class="caption">TV Device Information</h1>
+	<div>
+		<div id="info"></div>
+	</div>
+</body>
+</html>

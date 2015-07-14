@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body {
+		width: 100%; 
+		height: 100%;
+		background-color: #202020;
+		color: #fafafa;
+} 
+
+div {
+	    position:absolute; 
+		height:100%; 
+		width:100%;
+		display: table;
+}
+
+div>div {
+	    display: table-cell;
+		vertical-align: middle;
+		text-align:center;
+		color: #FFFFFF;
+		font-size: 30px;
+}
+
+input{
+	font-size: 30px;
+}
+</style>
+<script>
+	window.onload = function(){
+		document.body.onkeydown = function(e){ 
+			console.log(e); 
+			document.getElementById("keyCode").innerText = e.keyCode;
+			document.getElementById("keyIdentifier").innerText = e.keyIdentifier;
+		}
+	}
+</script>
+</head>
+<body>
+	<div> 
+		<div>
+			<p>Hello world!</p>
+			<p>Text: <input type="text"></p>
+			<p>Number: <input type="number"></p>
+			<p>Email: <input type="email"></p>
+			<p>URL: <input type="url"></p>
+			<p>
+				keyCode: <span id="keyCode">press key</span><br />
+				keyIdentifier: <span id="keyIdentifier">press key</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

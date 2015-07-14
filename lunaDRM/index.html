@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playready and Widevine DRM</title>
+	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+	<script src="js/player.js"></script>
+	<script src="js/drm.js"></script>
+	<link rel="stylesheet" media="screen" type="text/css" href="style.css">
+</head>
+<body>
+	<div> 
+		<h1 class="caption">Playready and Widevine DRM</h1> 
+		<video id="video"></video>
+		
+		<div class="controls">
+			<p>
+				<button id="play">Play</button>
+				<button id="pause">Pause</button>
+				<button id="backward"> <<< </button>
+				<button id="forward"> >>> </button>
+			</p>
+			<div id="info"></div>
+			<p id="state"></p>
+		</div>
+		
+		<p style="margin: 40px">
+			<select id="drmtype"><option value="widevine">Widevine</option><option value="playready">Playready</option></select>
+			<button onClick="loadDrmClient()">loadDrmClient</button>
+			<button onClick="isLoaded()">isLoaded?</button>
+			<button onClick="sendRightInformation()">sendRightInformation</button>
+			<button onClick="unloadDrmClient()">unloadDrmClient</button>
+			<button onClick="clearStash()">clear log</button>
+		</p>
+		<div id="log_stash"></div>
+	</div>
+</body>
+</html>

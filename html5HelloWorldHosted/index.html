@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello world hosted</title>
+</head>
+<body>
+	<script>
+		var defaultURL = "https://www.google.ru/",
+			searchURL  = "#newwindow=1&q="; 
+		
+		document.addEventListener("webOSLaunch", handler, true);
+		document.addEventListener("webOSRelaunch", handler, true);
+		
+		function handler(e){
+			window.location.replace( e.detail && e.detail.query ? defaultURL + searchURL + e.detail.query : defaultURL );
+			console.log(e);
+		}
+	</script>
+</body>
+</html>

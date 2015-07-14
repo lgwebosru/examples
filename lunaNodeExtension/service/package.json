@@ -1,0 +1,4 @@
+{
+  "name": "com.sample.nodeextension",
+  "main": "sampleExtNode.js"
+}

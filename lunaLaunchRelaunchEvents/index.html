@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>webOSLaunch and webOSRelaunch events</title>
+	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+	<link rel="stylesheet" media="screen" type="text/css" href="style.css">
+</head>
+<body>
+	<div> 
+		<h1 class="caption">webOSLaunch and webOSRelaunch events</h1> 
+		<h1>Launched: <span id="launched">0</span></h1>
+		<h1>ReLaunched: <span id="relaunched">0</span></h1>
+	</div>
+	
+	<script type="text/javascript">
+		
+		var launched   = document.getElementById("launched"),
+			relaunched = document.getElementById("relaunched");
+	
+		document.addEventListener('webOSLaunch', function(){
+			launched.innerText = 1*launched.innerText + 1;
+		}, true);
+		
+		document.addEventListener('webOSRelaunch', function(){
+			relaunched.innerText = 1*relaunched.innerText + 1;
+		}, true);
+	</script>
+</body>
+</html>

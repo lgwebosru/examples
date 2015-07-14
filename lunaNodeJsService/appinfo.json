@@ -1,0 +1,13 @@
+{
+    "id": "ru.lgwebos.nodejsfs",
+    "version": "0.0.1",
+    "vendor": "LGERP",
+    "type": "web",
+    "main": "index.html",
+    "title": "HTML5 input",
+    "icon": "icon.png",
+    "largeIcon": "largeIcon.png",
+    "uiRevision": 2,
+    "bgColor": "#707070",
+    "iconColor": "white"
+}

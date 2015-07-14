@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Node extention MD5</title>
+	<link rel="stylesheet" media="screen" type="text/css" href="style.css">
+	<script type="text/javascript" charset="utf-8" src="lib/webOS.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	
+	window.onload = function(){
+		var result  = document.getElementById('result');
+		
+		document.getElementById("start").onclick = function(e) {
+			
+			webOS.service.request("luna://com.sample.nodeextension.service", {
+				method: "encrypt",
+				parameters: {
+					targetString: result.innerText
+				},
+				onComplete: getEncryptMSG
+			});
+		}
+
+		function getEncryptMSG(inResponse) {
+			
+			var success = inResponse.returnValue;
+			
+			if (!success){
+				result.innerText = "Failed to start server";
+			}
+			
+			result.innerText = inResponse.encryptedMsg;
+		}
+	}
+
+</script>
+</head>
+<body>
+	<h1 class="caption">Node extention MD5</h1>
+	<div>
+		<div> 
+			<p id="result">Hello World</p>
+			<button id="start">Start Encryption</Button>
+		</div>
+	</div>
+</body>
+</html>

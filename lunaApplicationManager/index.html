@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Application manager</title>
+	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+	<script type="text/javascript">	   
+	window.onload= function(){
+		
+		document.getElementById("launch").onclick = function(){
+			var appid = document.getElementById("appid").value;
+			
+			webOS.service.request("luna://com.webos.applicationManager", {
+				method: "launch",
+				parameters: {
+					id: appid
+				} 
+			});
+			
+		};
+		
+		document.getElementById("launch_params").onclick = function(){
+			var appid = document.getElementById("appid_params").value,
+				param = document.getElementById("params_params").value;
+			
+			webOS.service.request("luna://com.webos.applicationManager", {
+				method: "launch",
+				parameters: {
+					id: appid,
+					params: {
+						query: param
+					}
+				} 
+			});
+			
+		};	
+	};
+	</script>
+	<link rel="stylesheet" media="screen" type="text/css" href="style.css">
+</head>
+<body>
+	<div>
+		<h1 class="caption">Application manager</h1> 
+		<h1>			
+			<p>
+				Launch an application:<br /> 
+				<input id="appid" type="text" value="ru.lgwebos.launchrelaunch"><br /> 
+				<button id="launch">Launch!</button>
+			</p>
+			<p>
+				Launch an application with params:<br /> 
+				<input id="appid_params" type="text" value="ru.lgwebos.hostedapp"><br />
+				<input id="params_params" type="text" value="cat"><br />
+				<button id="launch_params">Launch!</button>
+			</p>
+		</h1>
+	</div>
+</body>
+</html>

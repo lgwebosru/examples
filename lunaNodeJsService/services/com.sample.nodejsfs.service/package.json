@@ -1,0 +1,4 @@
+{
+  "name": "com.sample.nodejsfs.service",
+  "main": "sample_service.js"
+}

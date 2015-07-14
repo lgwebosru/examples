@@ -1,0 +1,11 @@
+{
+    "id": "com.sample.tvdeviceinformation",
+    "version": "0.0.1",
+    "vendor": "webOS sample",
+    "type": "web",
+    "main": "index.html",
+    "title": "TV Device Information",
+    "icon": "icon.png",
+    "largeIcon": "largeIcon.png",
+    "uiRevision": 2
+}

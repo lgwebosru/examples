@@ -1,0 +1,12 @@
+{
+	"id": "com.sample.nodeextension.service",
+	"description": "Node Extension module test",
+	"services": [ {
+		"name": "com.sample.nodeextension.service",
+		"description": "Node Extension module test",
+		"commands": [{ 
+			"name": "encrypt", 
+			"public": true
+		}] 
+	} ]
+}

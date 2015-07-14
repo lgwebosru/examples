@@ -1,0 +1,36 @@
+*{ margin: 0px; padding: 0px; }
+
+body {
+	width: 100%; 
+	height: 100%;
+	background-color: #202020;
+	color: #fafafa;
+} 
+
+div.wr, div.wr>div{
+	height: 100%;
+	width: 100%;
+}
+
+div.wr{
+	display: table;
+	position: absolute;
+}
+
+div.wr>div{
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+	font-size: 50px;
+}
+
+h1.caption{
+	position: absolute;
+	top: 20px;
+	left: 80px;
+	font-size: 60px;
+}
+
+select {
+	font-size: 30px;
+}

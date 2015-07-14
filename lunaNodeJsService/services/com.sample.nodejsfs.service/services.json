@@ -1,0 +1,12 @@
+{
+	"id": "com.sample.nodejsfs.service",
+	"description": "Sample Service",
+	"services": [{
+		"name": "com.sample.nodejsfs.service",
+		"description": "Sample Service",
+		"commands": [{ 
+			"name": "getNode", 
+			"public": true
+		}]
+	}]
+}
