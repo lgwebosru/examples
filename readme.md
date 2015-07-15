@@ -21,7 +21,7 @@
 
 Последняя версия библиотеки webos.js [доступна на GitHub](https://github.com/webOS-DevRel/webOS.js)
 
-##Cordova фреймворк
+##Cordova
 * **cordovaAccelerometer** - Получение данных сенсора акселерометра с MRCU
 
 Библиотека Cordova [доступна здесь](http://developer.lge.com/webOSTV/index.php/download_file/view/912/2381/)
